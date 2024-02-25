@@ -573,7 +573,72 @@ button:focus{
 .form{
   box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
 }
+.onboarding{
+  margin-top: 100px;
+}
 
 .colmenu{
   margin-left: 300px;
+}
+.card-for-all-team-ml-2 {
+  margin-top: 0px;
+  width: 300px; /* Adjust the width as needed */
+  margin-left: 20px; /* Add margin between cards */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  border-radius: 8px; /* Add rounded corners */
+  overflow: hidden; /* Hide overflowing content */
+  transition: transform 0.3s ease; /* Add transition effect */
+}
+
+.card-for-all-team-ml-2:hover {
+  transform: translateY(-20px); /* Lift card on hover */
+}
+
+.card-for-all-team-img-top {
+  width: 100%;
+  height: 200px; /* Set image height */
+  object-fit: cover; /* Ensure the image covers the entire space */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-for-all-team-name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-for-all-team-title {
+  margin: 100;
+  font-size: 1.2rem; /* Adjust font size */
+  color: #333; /* Set text color */
+}
+
+.card-price {
+  font-weight: bold;
+}
+
+.card-for-all-text {
+  margin-bottom: 20px;
+}
+
+.card-for-all-name-price button {
+  margin-right: 10px;
+}
+
+/* Button styles */
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #333; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
 }

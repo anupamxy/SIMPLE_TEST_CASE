@@ -137,29 +137,29 @@ const HomePage = () => {
         </div>
   
         <div className="col ">
-          <h1 className="text-center mt-45px"> WELCOME TO OUR ONBOARDING TEAM </h1>
+          <h1 className="onboarding"> WELCOME TO OUR ONBOARDING TEAM </h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
-              <div className="card ml-2" key={p._id}>
+              <div className="card-for-all-team-ml-2" key={p._id}>
                 <img
                   src={`/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
+                  className="card-for-all-team-img-top"
                   alt={p.name}
                 />
                 <div className="card-body">
-                  <div className="card-name-price">
-                    <h5 className="card-title">{p.name}</h5>
-                    <h5 className="card-title card-price">
+                  <div className="card-for-all-team-name-price">
+                    <h5 className="card-for-all-team-title">{p.name}</h5>
+                    <h5 className="card-for-all-title card-price">
                       {p.price.toLocaleString("en-US", {
                         style: "currency",
                         currency: "USD",
                       })}
                     </h5>
                   </div>
-                  <p className="card-text ">
+                  <p className="card-for-all-text ">
                     {p.description.substring(0, 60)}...
                   </p>
-                  <div className="card-name-price">
+                  <div className="card-for-all-name-price">
                     <button
                       className="btn btn-info ms-1"
                       onClick={() => navigate(`/product/${p.slug}`)}
