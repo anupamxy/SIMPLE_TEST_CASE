@@ -22,9 +22,9 @@ const Orders = () => {
   }, [auth?.token]);
   return (
     <Layout title={"Your Orders"}>
-      <div className="containerf">
+      <div className="container">
         <div className="row">
-          <div className="col-md-10">
+          <div className="col-md-3">
             <UserMenu />
           </div>
           <div className="col-md-9">
@@ -36,11 +36,11 @@ const Orders = () => {
                     <thead>
                       <tr>
                         <th scope="col">S:NO</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Buyer</th>
+                        <th scope="col">Verify Status </th>
+                        <th scope="col">Name</th>
                         <th scope="col"> date</th>
-                        <th scope="col">Payment</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">Payment </th>
+                        <th scope="col">Size</th>
                       </tr>
                     </thead>
                     <tbody>

@@ -86,10 +86,10 @@ const CartPage = () => {
                 : `Hello  ${auth?.token && auth?.user?.name}`}
               <p className="text-center">
                 {cart?.length
-                  ? `You Have ${cart.length} items in your cart ${
+                  ? `You Have ${cart.length} items in your team cart ${
                       auth?.token ? "" : "please login to checkout !"
                     }`
-                  : " Your Cart Is Empty"}
+                  : " Your  Team Cart Is Empty"}
               </p>
             </h1>
           </div>
@@ -124,7 +124,7 @@ const CartPage = () => {
               ))}
             </div>
             <div className="col-cart-summary ">
-              <h2>Cart Summary</h2>
+              <h2>Make Payment to be a part of Team</h2>
               <p>Total | Checkout | Payment</p>
               <hr />
               <h4>Total : {totalPrice()} </h4>

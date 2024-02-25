@@ -1,0 +1,95 @@
+/* Add this CSS to your existing stylesheet or create a new one */
+.container {
+    margin-top: 50px;
+  }
+  
+  .user-card {
+    position: relative;
+    background-image: url(https://img.freepik.com/free-vector/ginkgo-leaf-frame-design-colorful-background_53876-120237.jpg?t=st=1708867373~exp=1708870973~hmac=2212b4581cb3f8baefe58ecde06bb5b3f9db8ad906e73140c765902e5e8207b3&w=900);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  
+  .user-card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .user-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 400%;
+    height: 400%;
+    background: radial-gradient(circle, #480c0c 20%, transparent 20%);
+    background-size: 5000% 5000%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .user-card:hover::before {
+    opacity: 1;
+    transform: scale(2);
+    animation: galaxy 10s infinite linear;
+  }
+  
+  @keyframes galaxy {
+    0% {
+      transform: scale(2) translate(0, 0);
+    }
+    100% {
+      transform: scale(2) translate(-100px, -100px);
+    }
+  }
+  
+  
+  .table {
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  .border {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-3 {
+    margin-bottom: 15px;
+  }
+  
+  .mt-5 {
+    margin-top: 50px;
+  }
+  
+  @media (max-width: 768px) {
+    .col-md-6 {
+      width: 100%;
+    }
+  }
+  @media (max-width: 768px) {
+    .user-card {
+      font-size: 14px;
+    }
+  }
+  

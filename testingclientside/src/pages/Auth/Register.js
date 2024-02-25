@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -45,7 +46,7 @@ const Register = () => {
       <div className="form-container">
         
         <form className="form" onSubmit={handleSubmit}>
-        <h1>Register here</h1>
+        <h2>REGISTER</h2>
           <div className="mb-3">
             <input
               type="text"
@@ -139,5 +140,4 @@ const Register = () => {
     </Layout>
   );
 };
-
 export default Register;

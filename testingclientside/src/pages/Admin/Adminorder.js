@@ -11,10 +11,10 @@ const { Option } = Select;
 
 const AdminOrders = () => {
   const [status, setStatus] = useState([
-    "Not Process",
-    "Processing",
-    "Shipped",
-    "deliverd",
+    "verified",
+    "notverified",
+    "error",
+    "contact",
     "cancel",
   ]);
   const [changeStatus, setCHangeStatus] = useState("");
@@ -50,7 +50,7 @@ const AdminOrders = () => {
           <AdminMenu/>
         </div>
         <div className="col-md-9">
-          <h1 className="text-center">All Orders</h1>
+          <h1 className="text-center">List of User for verification</h1>
           {orders?.map((o, i) => {
             return (
               <div className="border shadow">
@@ -59,10 +59,10 @@ const AdminOrders = () => {
                     <tr>
                       <th scope="col">S:No</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Buyer</th>
+                      <th scope="col">Role define </th>
                       <th scope="col"> date</th>
                       <th scope="col">Payment</th>
-                      <th scope="col">Quantity</th>
+                      <th scope="col">size</th>
                     </tr>
                   </thead>
                   <tbody>
