@@ -67,14 +67,14 @@ const CreateProduct = () => {
 
   return (
     <Layout title={"Dashboard - Create Product"}>
-      <div className="containerf">
+      <div className="containerforcreatingproduct">
         <div className="row">
-          <div className="col-md-10">
+          <div className="col-md-0">
             <AdminMenu />
           </div>
-          <div className="col-md-9">
-            <h1>Make Team </h1>
-            <div className="m-1 w-100">
+          <div className="col-md-0">
+            <h1 className="topteam">Make Team </h1>
+            <div className="m-1 w-140">
               <Select
                 bordered={false}
                 placeholder="Select a Team"

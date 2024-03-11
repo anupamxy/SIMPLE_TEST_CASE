@@ -87,13 +87,13 @@ const CreateCategory = () => {
   };
   return (
     <Layout title={"Dashboard - Create Category"}>
-      <div className="containerf">
+      <div className="containerforcreatecategory">
         <div className="row">
-          <div className="col-md-10">
+          <div className="col-md-0">
             <AdminMenu />
           </div>
-          <div className="col-md-9">
-            <h1>Manage Category</h1>
+          <div className="col-md-0">
+            <h1 className="headingforcat">Manage Category</h1>
             <div className="p-3 w-100">
               <CategoryForm
                 handleSubmit={handleSubmit}
@@ -113,7 +113,7 @@ const CreateCategory = () => {
                   {categories?.map((c) => (
                     <>
                       <tr>
-                        <td key={c._id}>{c.name}</td>
+                        <td  className="catname" key={c._id}>{c.name}</td>
                         <td>
                           <button
                             className="btn btn-primary ms-2"

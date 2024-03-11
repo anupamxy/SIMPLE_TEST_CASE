@@ -48,7 +48,7 @@
     border: 1px solid black;
     border-radius: 0;
     background-color: #000;
-    color: white;
+    color: rgb(255, 255, 255);
     width: 250px;
   }
   
@@ -144,4 +144,65 @@
     top: 0;
     border-radius: 10px;
   }
+  @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext");
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
   
+
+  
+  .cardadmin {
+    margin-left: 500px;
+    border-radius: 10px;
+    filter: drop-shadow(0 5px 10px 0 #ffffff);
+    width: 400px;
+    height: 300px;
+   background-image: url(https://img.freepik.com/free-vector/glowing-sun-rays-background-from-top-left-corner_1017-26178.jpg?t=st=1710151294~exp=1710154894~hmac=6f23113292f8677a114165a2d4d47ea724180ed6565b8795dd86524baed21380&w=1380);
+   background-repeat: no-repeat;
+    padding: 20px;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in;
+  }
+  
+  .cardadmin::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -15px;
+    right: -15px;
+   background-image: url(https://img.freepik.com/free-vector/blue-background-with-sunburst_1048-3337.jpg?t=st=1710150608~exp=1710154208~hmac=eb4bb18ae89495d606b200d4cd333376b170fe2c2eb8acd65d3d7ccfc29ac880&w=740);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+    height:220px;
+    width: 25px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .cardadmin:hover::before{
+      transition-delay:0.2s ;
+  
+    transform: scale(40);
+  }
+  
+  .cardadmin:hover{
+      color: #ffffff;
+  
+  }
+  
+  .cardadmin p{
+      padding: 10px 0;
+  }
+  .topteam{
+    color: #48ff00;
+    text-align: center;
+  }

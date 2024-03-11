@@ -69,7 +69,8 @@ const ProductDetails = () => {
     <div>
       {/* Content to show if product.adminname exists */}
       {/* For example, a paragraph saying "Admin Name exists" */}
-      <p>Admin Name exists</p>
+    
+      
     </div>
   )}
   {!product.adminname && (

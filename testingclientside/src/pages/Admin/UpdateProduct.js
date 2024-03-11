@@ -109,18 +109,18 @@ const UpdateProduct = () => {
     <Layout >
       <div className="containerf">
         <div className="row">
-          <div className="col">
+          <div className="colforadminupdate">
             <AdminMenu />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-0">
             <h1>Update Product</h1>
-            <div className="m-1 w-75">
+            <div className="m-10 w-75">
               <Select
                 bordered={false}
                 placeholder="Select a category"
                 size="large"
                 showSearch
-                className="form-select mb-3"
+                className="form-select mb-0"
                 onChange={(value) => {
                   setCategory(value);
                 }}
@@ -132,7 +132,7 @@ const UpdateProduct = () => {
                   </Option>
                 ))}
               </Select>
-              <div className="mb-3">
+              <div className="mb-0">
                 <label className="btn btn-outline-secondary col-md-12">
                   {photo ? photo.name : "Upload Photo"}
                   <input
@@ -144,7 +144,7 @@ const UpdateProduct = () => {
                   />
                 </label>
               </div>
-              <div className="mb-3">
+              <div className="mb-0">
                 {photo ? (
                   <div className="text-center">
                     <img
@@ -165,7 +165,7 @@ const UpdateProduct = () => {
                   </div>
                 )}
               </div>
-              <div className="mb-3">
+              <div className="mb-0">
                 <input
                   type="text"
                   value={name}
@@ -174,7 +174,7 @@ const UpdateProduct = () => {
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-0">
                 <textarea
                   type="text"
                   value={description}

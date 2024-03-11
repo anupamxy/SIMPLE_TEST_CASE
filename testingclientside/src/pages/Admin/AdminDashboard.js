@@ -12,10 +12,13 @@ const AdminDashboard = () => {
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <div className="card w-75 p-3">
-              <h3> Admin Name : {auth?.user?.name}</h3>
-              <h3> Admin Email : {auth?.user?.email}</h3>
-              <h3> Admin Contact : {auth?.user?.phone}</h3>
+            <div className="cardadmin ">
+             
+              <p> Admin Name : {auth?.user?.name}</p>
+              <p> Admin Email : {auth?.user?.email}</p>
+              <p> Admin Contact : {auth?.user?.phone}</p>
+              <p>Admin Adress: {auth?.user?.address}</p>
+             
             </div>
           </div>
         </div>

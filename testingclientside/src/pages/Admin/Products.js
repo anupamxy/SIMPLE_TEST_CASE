@@ -29,8 +29,8 @@ const Products = () => {
         <div className="coladmin">
           <AdminMenu />
         </div>
-        <div className="col-md-9 ">
-          <h1 className="text-center">All Products List</h1>
+        <div className="col-md-0 ">
+          <h1 className="text-center">All List of Team You Created</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <Link
@@ -38,7 +38,7 @@ const Products = () => {
                 to={`/dashboard/admin/product/${p.slug}`}
                 className="product-link"
               >
-                <div className="card m-2" style={{ width: "18rem" }}>
+                <div className="card m-100" style={{ width: "25rem" }}>
                   <img
                     src={`/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
@@ -46,10 +46,10 @@ const Products = () => {
                   />
                   <div className="card-body">
                     
-                    <h5 className="card-title">{p.name}</h5>
-                    <p className="card-text">{p.description}</p>
-                    <p className="card-auth-name">{p.adminname}</p>
-                    <p className="card-ship">{p.shipping }</p>
+                    <p className="card-title">{p.name}</p>
+                    <p className="card-text"> About Team: {p.description}</p>
+                    <p className="card-auth-name">Team Admin Name: {p.adminname}</p>
+                    
                   </div>
                 </div>
               </Link>

@@ -248,7 +248,7 @@ box-shadow: 0px 0px 47px 13px rgba(246, 235, 37, 0.9);
   margin-bottom: 10px;
 }  .card {
   position: relative;
-  background-image: url(https://img.freepik.com/free-vector/ginkgo-leaf-frame-design-colorful-background_53876-120237.jpg?t=st=1708867373~exp=1708870973~hmac=2212b4581cb3f8baefe58ecde06bb5b3f9db8ad906e73140c765902e5e8207b3&w=900);
+
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -702,7 +702,7 @@ body{ background:url(https://images.unsplash.com/photo-1495195129352-aeb325a55b6
   height:300px;
   width:300px;
   
-  color:#fff;
+  color:#050505;
   padding:20px;
 }
 .card-meal-type{
@@ -816,4 +816,40 @@ img {
 
 .profilecard a {
   color: white;
+}
+
+.containerforcreatingproduct{
+  border-radius: 20px;
+  margin-top: 100px;
+  background-image: url(https://img.freepik.com/free-vector/realistic-neon-lights-background_52683-66030.jpg?w=1060&t=st=1710152175~exp=1710152775~hmac=728552c57b130d830fd3342d6a0f227d6a79a64421d726d214d05f3d9b9fb3d5);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  align-items: center;
+
+}
+.adminpanel{
+  text-align: center;
+  color: #ff5;
+}
+.containerforcreatecategory{
+
+  border-radius: 20px;
+  margin-top: 100px;
+  background-image: url(https://img.freepik.com/free-vector/realistic-neon-lights-background_52683-66030.jpg?w=1060&t=st=1710152175~exp=1710152775~hmac=728552c57b130d830fd3342d6a0f227d6a79a64421d726d214d05f3d9b9fb3d5);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  align-items: center;
+}
+.headingforcat{
+  color: #5ce82e;
+  text-align: center;
+}
+.catname{
+  color: #23e7f5;
+  
+}
+.colforadminupdate{
+  margin-left: 0px;
 }
