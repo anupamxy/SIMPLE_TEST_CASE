@@ -5,8 +5,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
 import { useAuth } from "../../context/auth";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Login = () => {
+  const { user,loginWithRedirect } = useAuth0();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useAuth();
@@ -40,6 +42,7 @@ const Login = () => {
       toast.error("Something went wrong");
     }
   };
+  console.log(user);
   return (
     <Layout title="Register - Ecommer App">
       <div className="form-container " style={{ minHeight: "90vh" }}>
@@ -84,6 +87,8 @@ const Login = () => {
           <button type="submit" className="btn btn-primary">
             LOGIN
           </button>
+          <button onClick={(e) => { e.preventDefault(); loginWithRedirect() }}>OR Doo SSO Log In</button>
+
         </form>
       </div>
     </Layout>

@@ -6,11 +6,13 @@ import SearchInput from "../Form/SearchInput";
 import useCategory from "../../hooks/useCategory";
 import { Badge } from "antd";
 import { useCart } from "../../context/cart";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
   const [cart] = useCart();
   const categories = useCategory();
+  const { logout } = useAuth0();
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -90,6 +92,7 @@ const Header = () => {
                       Login
                     </NavLink>
                   </li>
+                 
                 </>
               ) : (
                 <>
@@ -105,14 +108,13 @@ const Header = () => {
                     </NavLink>
                     <ul className="dropdown-menu">
                       <li>
-                        <NavLink
-                          to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
-                          }`}
-                          className="dropdown-item"
-                        >
-                          Dashboard
-                        </NavLink>
+                      <NavLink
+  to={`/dashboard/${auth?.user?.role === 1 ? "admin" : auth?.user?.role === 2 ? "teamadmin" : "user"}`}
+  className="dropdown-item"
+>
+  Profile Page
+</NavLink>
+
                       </li>
                       <li>
                         <NavLink
@@ -121,6 +123,13 @@ const Header = () => {
                           className="dropdown-item"
                         >
                           Logout
+                        </NavLink>
+                        <NavLink
+                          onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                          className="dropdown-item"
+                         
+                      >
+
                         </NavLink>
                       </li>
                     </ul>

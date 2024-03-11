@@ -17,33 +17,34 @@ const router = express.Router();
 
 // REGISTER || METHOD POST
 router.post("/register", registerController);
-//LOGIN
+// LOGIN
 router.post("/login", loginController);
-//FORGOT PASSWORD
+// FORGOT PASSWORD
 router.post("/forgot-password", forgotPasswordController);
+
+// TEST - Accessible to both Admins and Team Admins
 router.get("/test", requireSignIn, isAdmin, testController);
-//protected routes for user 
+
+// Protected routes for user - Accessible to all authenticated users
 router.get("/user-auth", requireSignIn, (req, res) => {
   res.status(200).send({ ok: true });
 });
-//protected routes for Admin
-router.get("/admin-auth", requireSignIn,isAdmin,(req, res) => {
+
+// Protected routes for Admin and Team Admin
+router.get("/admin-auth", requireSignIn, isAdmin, (req, res) => {
   res.status(200).send({ ok: true });
 });
-//update profile
+
+// Update profile - Accessible to all authenticated users
 router.put("/profile", requireSignIn, updateProfileController);
-//order
+
+// Order routes
 router.get("/orders", requireSignIn, getOrdersController);
+
+// All orders - Accessible to Admins and Team Admins
 router.get("/all-orders", requireSignIn, isAdmin, getAllOrdersController);
 
-// order status update
-router.put(
-  "/order-status/:orderId",
-  requireSignIn,
-  isAdmin,
-  orderStatusController
-);
-
-
+// Order status update - Accessible to Admins and Team Admins
+router.put("/order-status/:orderId", requireSignIn, isAdmin, orderStatusController);
 
 export default router;

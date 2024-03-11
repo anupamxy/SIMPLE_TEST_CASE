@@ -16,7 +16,7 @@ const UpdateProduct = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [adminname, setadminname] = useState("");
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
   const [id, setId] = useState("");
@@ -32,7 +32,7 @@ const UpdateProduct = () => {
       setDescription(data.product.description);
       setPrice(data.product.price);
       setPrice(data.product.price);
-      setQuantity(data.product.quantity);
+      setadminname(data.product.adminname);
       setShipping(data.product.shipping);
       setCategory(data.product.category._id);
     } catch (error) {
@@ -68,7 +68,7 @@ const UpdateProduct = () => {
       productData.append("name", name);
       productData.append("description", description);
       productData.append("price", price);
-      productData.append("quantity", quantity);
+      productData.append("adminname", adminname);
       photo && productData.append("photo", photo);
       productData.append("category", category);
       if (photo) {
@@ -195,11 +195,11 @@ const UpdateProduct = () => {
               </div>
               <div className="mb-3">
                 <input
-                  type="number"
-                  value={quantity}
-                  placeholder="write a quantity"
+                  type="string"
+                  value={adminname}
+                  placeholder="write a admin name"
                   className="form-control"
-                  onChange={(e) => setQuantity(e.target.value)}
+                  onChange={(e) => setadminname(e.target.value)}
                 />
               </div>
               <div className="mb-3">
@@ -214,8 +214,8 @@ const UpdateProduct = () => {
                   }}
                   value={shipping ? "yes" : "No"}
                 >
-                  <Option value="0">No</Option>
-                  <Option value="1">Yes</Option>
+                  <Option value="0">Free</Option>
+                  <Option value="1">Premium</Option>
                 </Select>
               </div>
               <div className="mb-3">

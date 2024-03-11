@@ -54,7 +54,7 @@ const Profile = () => {
       <div className="containerf">
         <div className="row">
           <div className="col-md-10">
-            <UserMenu />
+         
           </div>
           <div className="col-md-10">
             <div className="form-container" style={{ marginTop: "-40px" }}>

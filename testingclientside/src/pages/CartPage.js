@@ -94,7 +94,7 @@ const CartPage = () => {
             </h1>
           </div>
         </div>
-        <div className="container ">
+        <div className="containerf ">
           <div className="row ">
             <div className="col-md-6  p-0 m-0">
               {cart?.map((p) => (

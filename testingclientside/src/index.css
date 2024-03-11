@@ -197,7 +197,7 @@ box-shadow: 0px 0px 47px 13px rgba(246, 235, 37, 0.9);
   padding: 10px;
   border: none;
   border-radius: 15px;
-  background-color: #23a8f5;
+
   background-repeat: no-repeat;
  
 
@@ -392,7 +392,7 @@ html {
 	display: grid;
 	
 	font-family: "Audiowide", cursive;
-	color: #333;
+	
 }
 
 p {
@@ -427,6 +427,7 @@ p {
 	color: #ffdd40;
 	animation: outline 1s ease-in-out 1.5s forwards;
 }
+
 
 @keyframes outline {
 	from {
@@ -480,12 +481,7 @@ p {
 html,body{
   height: 100%;
 }
-body{
-  display: grid;
-  place-items: center;
-  background: #dde1e7;
-  text-align: center;
-}
+
 .content{
   width: 330px;
   padding: 40px 30px;
@@ -641,4 +637,183 @@ button:focus{
 .btn:hover {
   background-color: #333; /* Change background color on hover */
   color: #fff; /* Change text color on hover */
+}
+
+:root {
+  --indent: 0;
+}
+
+@media screen and (min-width: 40rem) {
+  :root {
+    --indent: clamp(1.5rem, 4vw, 2.5rem);
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+*{
+  /* margin:0; */
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Playfair Display', serif;
+}
+body{ background:url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80);
+  background-size:cover;
+  background-position:right;
+  background-attachment:fixed;
+}
+#header{
+  margin:20px;
+}
+#header>h1{
+  text-align:center;
+  font-size:3rem;
+}
+#header>p{
+  text-align:center;
+  font-size:1.5rem;
+  font-style:italic;
+}
+.container{
+  width:100vw;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:40px 20px;
+}
+.card{
+  display:flex;
+  flex-direction:column;
+  width:400px;
+  margin-bottom:60px;
+}
+
+.card-image{
+  width:400px;
+  height:250px;
+}
+.card-image>img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:bottom;
+}
+.card-text{
+  margin:-30px auto;
+  margin-bottom:-50px;
+  height:300px;
+  width:300px;
+  
+  color:#fff;
+  padding:20px;
+}
+.card-meal-type{
+  font-style:italic;
+}
+.card-title{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  margin-top:5px;
+}
+.card-body{
+  font-size:1.25rem;
+}
+.card-price{
+  width:100px;
+  height:100px;
+  background-color:#970C0A;
+  color:#fff;
+  margin-left:auto;
+  font-size:2rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+body{ background:url(https://images.unsplash.com/photo-1495195129352-aeb325a55b65?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1776&q=80);
+  background-size:cover;
+  background-position:right;
+  background-attachment:fixed;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.profilecard {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns:
+    var(--indent) calc(3 * var(--indent)) 1fr 1fr calc(2 * var(--indent))
+    var(--indent);
+  grid-template-rows:
+    var(--indent) calc(3 * var(--indent)) 1fr calc(2 * var(--indent))
+    var(--indent);
+  max-width: 60rem;
+}
+
+.profilecard::before {
+  content: "";
+  display: block;
+  background: white;
+  background-image: url(https://source.unsplash.com/6YmzwamGzCg/1200x1200);
+  background-size: cover;
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+  box-shadow: 0 0 2rem hsla(0, 0%, 0%, 0.1);
+}
+
+.profilecard::after {
+  content: "";
+  display: block;
+  background: #e0dde4;
+  grid-column: 1/-2;
+  grid-row: 1/-2;
+  z-index: -1;
+}
+
+.profilecard img {
+  grid-column: 4/5;
+  grid-row: 3/4;
+  box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.profilecard figcaption {
+  grid-column: 3/5;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+}
+
+.profilecard blockquote {
+  grid-column: 1/3;
+  margin: 0;
+  padding-bottom: 1rem;
+  /* font-size: clamp(2rem, 2.5vw, 3rem); */
+  font-size: 3rem;
+  font-weight: 100;
+  align-self: flex-end;
+}
+
+.profilecard cite {
+  grid-column: 1/2;
+  font-size: 1.3rem;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.profilecard .credit {
+  grid-column: 2/4;
+  place-self: flex-end;
+  margin: 0;
+  padding: 1rem;
+  text-align: end;
+  color: white;
+  font-weight: 400;
+}
+
+.profilecard a {
+  color: white;
 }

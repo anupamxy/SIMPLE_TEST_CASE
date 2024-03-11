@@ -25,7 +25,7 @@ const Orders = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-3">
-            <UserMenu />
+         
           </div>
           <div className="col-md-9">
             <h1 className="text-center">All Teams</h1>

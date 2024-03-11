@@ -23,16 +23,19 @@ const productSchema = new mongoose.Schema(
       ref: "Category",
       required: true,
     },
-    quantity: {
-      type: Number,
-      required: true,
-    },
+    
     photo: {
       data: Buffer,
       contentType: String,
     },
+    adminname: {
+      type: String,
+      required:true,
+    
+    },
     shipping: {
       type: Boolean,
+      required:true,
     },
   },
   { timestamps: true }

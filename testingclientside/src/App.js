@@ -24,6 +24,9 @@ import CategoryProduct from "./pages/CategoryProduct";
 import CartPage from "./pages/CartPage";
 import AdminOrders from "./pages/Admin/Adminorder";
 import Welcomepage from './pages/Welcomepage';
+import Team from './pages/TeamAdmin/Team';
+import LoginButton from './pages/Googlelogin';
+
 
 
 
@@ -61,6 +64,7 @@ function App() {
 
           <Route path="admin/users" element={<Users />} />
           <Route path="admin/orders" element={<AdminOrders/>} />
+          <Route path="teamadmin" element={<Team />} />
          
         </Route>
   
@@ -71,6 +75,8 @@ function App() {
     <Route path="/forgot-password"element={<ForgotPasssword/>}/>
     <Route path="/register"element={<Register/>}/>
     <Route path="/login"element={<Login/>}/>
+    <Route path="/googlelogin"element={<LoginButton/>}/>
+   
     
    
    </Routes>

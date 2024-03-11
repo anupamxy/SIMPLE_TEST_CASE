@@ -16,46 +16,53 @@ var gateway = new braintree.BraintreeGateway({
 });
 export const createProductController = async (req, res) => {
   try {
-    const { name, slug, description, price, category, quantity, shipping } =
-      req.body;
+    const { name, slug, description, price, category, adminname, shipping } = req.body;
     const { photo } = req.files;
 
     // Validation
-    if (!name || !description || !price || !category || !quantity) {
-      return res.status(500).send({ error: "All fields are required" });
+    if (!name || !description || !price || !category||!adminname ) {
+      return res.status(400).send({ error: "All fields are required" });
     }
 
     if (!photo) {
-      return res.status(500).send({ error: "Photo is required" });
+      return res.status(400).send({ error: "Photo is required" });
     }
 
     if (photo.size > 10000000) {
-      return res.status(500).send({ error: "Photo should be less than 1MB" });
+      return res.status(400).send({ error: "Photo should be less than 1MB" });
     }
 
-    const products = new productModel({ ...req.body, slug: slugify(name) });
+    // Create slug from name
+    const productSlug = slugify(name);
 
+    // Create product instance
+    const product = new productModel({ name, slug: productSlug, description, price, category, adminname, shipping });
+
+    // Add photo data
     if (photo.data) {
-      products.photo.data = photo.data;
-      products.photo.contentType = photo.mimetype;
+      product.photo.data = photo.data;
+      product.photo.contentType = photo.mimetype;
     }
 
-    await products.save();
+    // Save product to database
+    await product.save();
 
+    // Send success response
     res.status(201).send({
       success: true,
       message: "Product Created Successfully",
-      products,
+      product,
     });
   } catch (error) {
-    console.log(error);
+    console.log("Error creating product:", error);
     res.status(500).send({
       success: false,
-      error,
       message: "Error in creating product",
+      error: error.message, // Include error message in response
     });
   }
 };
+
 
 //get all products
 export const getProductController = async (req, res) => {
@@ -149,12 +156,12 @@ export const deleteProductController = async (req, res) => {
 
 export const updateProductController = async (req, res) => {
   try {
-    const { name, slug, description, price, category, quantity, shipping } =
+    const { name, slug, description, price, category, adminname, shipping } =
       req.body;
     const { photo } = req.files; // Retrieve the photo from req.files
 
     // Validation
-    if (!name || !description || !price || !category || !quantity) {
+    if (!name || !description || !price || !category || !adminname) {
       return res.status(500).send({ error: "All fields are required" });
     }
 

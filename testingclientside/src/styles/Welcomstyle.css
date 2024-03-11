@@ -102,13 +102,15 @@
     flex-direction: column; /* Ensure flex items stack vertically */
     align-items: center; /* Center items horizontally */
     border-radius: 8px;
-    background-image: url(https://img.freepik.com/free-vector/abstract-luxury-beautiful-decorative-yellow-background_1055-6454.jpg?t=st=1708889499~exp=1708893099~hmac=9d281988606a7870551a27e6e6baa3719b138f11449a13d9b2a77ca1cd87c651&w=740);
+
+    /* background-image: url(https://img.freepik.com/free-vector/abstract-luxury-beautiful-decorative-yellow-background_1055-6454.jpg?t=st=1708889499~exp=1708893099~hmac=9d281988606a7870551a27e6e6baa3719b138f11449a13d9b2a77ca1cd87c651&w=740); */
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for container effect */
     padding: 20px;
     margin-bottom: 100px;
   }
+ 
   
   .team-member-image {
     flex: 50% 0 100%; /* Image column takes up 30% of container */
@@ -142,6 +144,9 @@
   .team-member-details p.price {
     font-weight: bold; /* Make price bold */
   }
+  .movetoview{
+    text-align: center;
+  }
   
   /* Media query for responsiveness */
   @media (max-width: 768px) {
@@ -153,5 +158,325 @@
       padding-left: 0; /* Remove padding on smaller screens */
       margin-top: 20px; /* Add some space between image and details */
     }
+    .sidenav{
+      margin-top: 45px;
+    }
+    .dashboardtittle{
+      margin-top: 120px;
+    }
+  }
+
+  
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 45px;
+    left: 0;
+    background-color: hsl(46, 87%, 51%);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
   }
   
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #150202;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    
+  }
+  .dashboardtittle{
+    text-align: center;
+    margin-top: 75px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    .dashboardtittle{
+      margin-top: 75px;
+    }
+  }
+
+.containerfordashboard{
+  margin-top: 0px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
+
+/* Defining the theme for the card: colors, fonts, spacing. 
+This uses CSS variables - so you only have to change the colors in one place */ 
+:root {
+  /* The color for your card background and background pattern */ 
+  --background: #F3F0D7;
+  --background-decor: #DBD0C0;
+  
+
+  /* Colors for the elements on your card */ 
+  --banner-bg: #1C0C5B;
+  --banner-txt: white;
+
+  /* Message area colors */ 
+  --message-bg: #F1EDE9;
+  --message-line: #94ACD4;
+  --message-txt: #333333;
+
+  /* Fonts */ 
+  --font-banner: 'Abril Fatface', cursive;
+  --font-text: 'Shadows Into Light', cursive;
+
+  /* Space and other details */
+  --space: 16px;
+  --space-xsm: 4px;
+  --space-sm: 8px;
+  --space-lg: 24px;
+  --space-xlg: 48px;
+}
+
+/* Base template configurations */ 
+body {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+
+  /* background color - here we are using the variable we created earlier! */ 
+  
+
+  /* background pattern - remove the lines below and paste the new code if you want to use a different style */ 
+ 
+ 
+
+}
+
+.bday-card {
+  max-width: 420px;
+  height: 100%;
+  padding-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.bday-pic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 240px;
+  padding: var(--space-sm) var(--space-sm) var(--space-xlg);
+  background: white;
+  border-radius: 4px;
+  box-shadow: var(--space-xsm) var(--space-xsm) 15px rgba(0,0,0, .15);
+
+  /* Edit the Translate property below to adjust the position of your picture */ 
+  transform: rotate(5deg) translate(20px, 45px);
+}
+
+.bday-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bday-decor--container {
+  position: relative;
+}
+
+.bday-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  font-size: 42px;
+  z-index: 1;
+
+  /* Play around with those properties to change your banner styling */ 
+  color: var(--banner-txt);
+  font-family: var(--font-banner);
+  text-transform: uppercase;
+  transform: rotate(-5deg);
+  gap: var(--space-sm) 0;
+}
+
+.bday-banner span {
+  background: var(--banner-bg);
+  padding: var(--space) var(--space-lg);
+  flex-grow: 0;
+}
+
+.bday-banner span:nth-child(2) {
+  margin-left: var(--space-lg);
+}
+
+
+.bday-message {
+  max-width: 80%;
+  padding: 35px var(--space);
+  font-family: var(--font-text);
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--message-txt);
+  background-color: var(--message-bg);
+}
+
+/* Paper */
+.bday-message--paper {
+  background: repeating-linear-gradient(var(--message-bg), var(--message-bg) 31px, var(--message-line) 31px, var(--message-line) 32px);
+  box-shadow: var(--space-xsm) var(--space-xsm) 15px rgba(0,0,0, .15);
+}
+/* End - Paper */
+
+/* Block right */
+.bday-message--block-right {
+  position: relative;
+}
+
+.bday-message--block-right::before {
+  content: "";
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--paper);
+  z-index: -1;
+}
+/* End - Block right */
+
+/* Block left */
+.bday-message--block-left {
+  position: relative;
+}
+
+.bday-message--block-left::before {
+  content: "";
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--paper);
+  z-index: -1;
+}
+/* End - Block left */
+
+
+.bday-decor {
+  /* Emojis are text - so here we are setting a font-size to make them bigger */ 
+  font-size: 96px;
+}
+
+/* Positioning for the emojis - play around with the values to change the placement of your decorations */ 
+.bday-decor--top-right { 
+  position: absolute;
+  bottom: -70px;
+  right: -20px;
+}
+
+.bday-decor--top-left {
+  position: absolute;
+  bottom: 0px;
+  left: -25px;
+}
+
+.bday-decor--bottom-right {
+  position: absolute; 
+  right: 20px;
+}
+
+/* Animations */ 
+
+/* Here we designate an specific animation to an specific element using a class. We have a defined name, time and iteration-count for each animation. We can also define the origin point from which the animation will happen - the default is the center. */  
+.zoom-left-in-out {
+  animation-name: zoom-left-in-out;
+  animation-duration: 1.75s;
+  animation-iteration-count: infinite;
+  transform-origin: left bottom;
+}
+
+/* Here we specify what will change on the element when they animate */ 
+@keyframes zoom-left-in-out {
+  /* Animation will start and end with the same settings */ 
+  0%, 100% {
+    transform: scale(0.95) rotate(2deg);
+  }
+
+  /* Animation will reach those settings 50% into the duration time we set on the declaration */
+  50% {
+    transform: scale(1) rotate(-2deg);
+  }
+}
+
+/* pulse */ 
+.pulse {
+  animation-name: pulse;
+  animation-duration: 1.3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+/* pulse - End */
+
+/* float */ 
+.float {
+  animation-name: float;
+  animation-duration: 1.9s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+/* float - End */
+
+/* spin */ 
+.spin {
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* spin - End */

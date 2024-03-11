@@ -15,7 +15,7 @@ const CreateProduct = () => {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
-  const [quantity, setQuantity] = useState("");
+  const [adminname, setAdminname] = useState("");
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
 
@@ -44,15 +44,17 @@ const CreateProduct = () => {
       productData.append("name", name);
       productData.append("description", description);
       productData.append("price", price);
-      productData.append("quantity", quantity);
+      productData.append("adminname", adminname);
       productData.append("photo", photo);
       productData.append("category", category);
-      const { data } =  axios.post(
+      productData.append("category",shipping);
+      const { data } = await axios.post(
         "/api/v1/product/create-product",
         productData
       );
       if (data?.success) {
         toast.error(data?.message);
+        console.log(data);
       } else {
         toast.success("Product Created Successfully");
         navigate("/dashboard/admin/products");
@@ -71,11 +73,11 @@ const CreateProduct = () => {
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <h1>Create Product</h1>
+            <h1>Make Team </h1>
             <div className="m-1 w-100">
               <Select
                 bordered={false}
-                placeholder="Select a category"
+                placeholder="Select a Team"
                 size="large"
                 showSearch
                 className="form-select mb-3"
@@ -91,7 +93,7 @@ const CreateProduct = () => {
               </Select>
               <div className="mb-3">
                 <label className="btn btn-outline-secondary col-md-12">
-                  {photo ? photo.name : "Upload Photo"}
+                  {photo ? "Image Uploaded" : "Upload Photo"}
                   <input
                     type="file"
                     name="photo"
@@ -117,7 +119,7 @@ const CreateProduct = () => {
                 <input
                   type="text"
                   value={name}
-                  placeholder="write a name"
+                  placeholder="Domain of team"
                   className="form-control"
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -126,7 +128,7 @@ const CreateProduct = () => {
                 <textarea
                   type="text"
                   value={description}
-                  placeholder="write a description"
+                  placeholder="Description about team"
                   className="form-control"
                   onChange={(e) => setDescription(e.target.value)}
                 />
@@ -136,38 +138,39 @@ const CreateProduct = () => {
                 <input
                   type="number"
                   value={price}
-                  placeholder="write a Price"
+                  placeholder="Team size"
                   className="form-control"
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
               <div className="mb-3">
                 <input
-                  type="number"
-                  value={quantity}
-                  placeholder="write a quantity"
+                  type="string"
+                  value={adminname}
+                  placeholder="Name of Admin"
                   className="form-control"
-                  onChange={(e) => setQuantity(e.target.value)}
+                  onChange={(e) => setAdminname(e.target.value)}
                 />
               </div>
               <div className="mb-3">
-                <Select
-                  bordered={false}
-                  placeholder="Select Shipping "
-                  size="large"
-                  showSearch
-                  className="form-select mb-3"
-                  onChange={(value) => {
-                    setShipping(value);
-                  }}
-                >
-                  <Option value="0">No</Option>
-                  <Option value="1">Yes</Option>
-                </Select>
+              <Select
+  bordered={false}
+  placeholder="Select Shipping "
+  size="large"
+  showSearch
+  className="form-select mb-3"
+  onChange={(value) => {
+    setShipping(value);
+  }}
+>
+  <Option value="0">Free Team</Option>
+  <Option value="1">Premium Team</Option>
+</Select>
+
               </div>
               <div className="mb-3">
                 <button className="btn btn-primary" onClick={handleCreate}>
-                  CREATE PRODUCT
+                  CREATE TEAM
                 </button>
               </div>
             </div>
