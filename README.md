@@ -1,5 +1,5 @@
-                                                       # SIMPLE_TEST_CASE
-                                                       BrewTest: WebApp Tool for Test Case Management System (Structured Requirements)
+                                                       <h1> SIMPLE_TEST_CASE</h1>
+                                              <p>BrewTest: WebApp Tool for Test Case Management System (Structured Requirements)</p>
 1. User Roles and Permissions:
 Roles:
 ● Super Admin: Manages the entire platform, including adding/removing teams
