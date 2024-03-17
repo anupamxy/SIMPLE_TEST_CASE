@@ -1,4 +1,5 @@
-import { Routes,Route } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Policy from "./pages/Policy";
 import Pagenotfound from "./pages/Pagenotfound";
 import Contact from './pages/Contact';
@@ -26,64 +27,43 @@ import AdminOrders from "./pages/Admin/Adminorder";
 import Welcomepage from './pages/Welcomepage';
 import Team from './pages/TeamAdmin/Team';
 import LoginButton from './pages/Googlelogin';
-
-
-
-
-
-
-
+import Teams from './teams/Teams';
 
 function App() {
   return (
-  
-   <>
-   
-   <Routes>
-   <Route path="/"element={<Welcomepage/>}/>
-   <Route path="/courses" element={<HomePage />} />
-  
-        <Route path="/product/:slug" element={<ProductDetails />} />
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/category/:slug" element={<CategoryProduct/>} />
-        <Route path="/search" element={<Search/>} />
-        <Route path="/dashboard" element={<PrivateRoute />}>
-          <Route path="user" element={<Dashboard />} />
-          <Route path="user/orders" element={<Orders />} />
-          <Route path="user/profile" element={<UserProfile />} />
-  </Route>
-  
-  <Route path="/dashboard" element={<AdminRoute />}>
-          <Route path="admin" element={<AdminDashboard />} />
-          <Route path="admin/create-category" element={<CreateCategory />} />
-          <Route path="admin/create-product" element={<CreateProduct />} />
-          <Route path="admin/product/:slug" element={<UpdateProduct />} />
+    <Routes>
+      <Route path="/" element={<Welcomepage />} />
+      <Route path="/courses" element={<HomePage />} />
+      <Route path="/product/:slug" element={<ProductDetails />} />
+      <Route path="/categories" element={<Categories />} />
+      <Route path="/cart" element={<CartPage />} />
+      <Route path="/category/:slug" element={<CategoryProduct />} />
+      <Route path="/search" element={<Search />} />
+      <Route path="/dashboard/*" element={<PrivateRoute />}>
+        <Route path="user" element={<Dashboard />} />
+        <Route path="user/orders" element={<Orders />} />
         
-          <Route path="admin/products" element={<Products />} />
-
-          <Route path="admin/users" element={<Users />} />
-          <Route path="admin/orders" element={<AdminOrders/>} />
-          <Route path="teamadmin" element={<Team />} />
-         
-        </Route>
-  
-    
-    <Route path="/contact"element={<Contact/>}/>
-    <Route path="/policy"element={<Policy/>}/>
-    <Route path="/*"element={<Pagenotfound/>}/>
-    <Route path="/forgot-password"element={<ForgotPasssword/>}/>
-    <Route path="/register"element={<Register/>}/>
-    <Route path="/login"element={<Login/>}/>
-    <Route path="/googlelogin"element={<LoginButton/>}/>
-   
-    
-   
-   </Routes>
-  
-
-
-   </>
+        <Route path="user/profile" element={<UserProfile />} />
+      </Route>
+      <Route path="/dashboard/*" element={<AdminRoute />}>
+        <Route path="admin" element={<AdminDashboard />} />
+        <Route path="admin/create-category" element={<CreateCategory />} />
+        <Route path="admin/create-product" element={<CreateProduct />} />
+        <Route path="admin/product/:slug" element={<UpdateProduct />} />
+        <Route path="admin/products" element={<Products />} />
+        <Route path="admin/users" element={<Users />} />
+        <Route path="admin/orders" element={<AdminOrders />} />
+        <Route path="teamadmin" element={<Team />} />
+      </Route>
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/policy" element={<Policy />} />
+      <Route path="/forgot-password" element={<ForgotPasssword />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/googlelogin" element={<LoginButton />} />
+      <Route path="/teams" element={<Teams />} />
+      <Route path="/*" element={<Pagenotfound />} />
+    </Routes>
   );
 }
 

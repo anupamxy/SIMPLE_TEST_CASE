@@ -68,7 +68,6 @@ const AdminOrders = () => {
                       <th scope="col">S:No</th>
                       <th scope="col">Status</th>
                       <th scope="col">Role define</th>
-                    
                       <th scope="col">Date</th>
                       <th scope="col">Payment</th>
                       <th scope="col">Team size</th>

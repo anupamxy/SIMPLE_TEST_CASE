@@ -20,7 +20,7 @@ export const createProductController = async (req, res) => {
     const { photo } = req.files;
 
     // Validation
-    if (!name || !description || !price || !category||!adminname ) {
+    if (!name || !description || !price || !category||!adminname ||!shipping) {
       return res.status(400).send({ error: "All fields are required" });
     }
 
