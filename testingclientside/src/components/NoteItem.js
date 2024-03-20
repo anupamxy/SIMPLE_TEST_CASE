@@ -1,6 +1,6 @@
 
 import React, { useContext,useState} from 'react';
-import noteContext from '../context/NoteContext';
+import noteContext from '../context/Notecontext';
 import "./Noteitem.css"
 
 
@@ -24,25 +24,23 @@ const Noteitem = (props) => {
        
       <thead>
         <tr>
-          <th>Tittle</th>
-          <th>Note</th>
-          <th>Tag</th>
-          <th>Information</th>
-          <th>somenumber</th>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
           <th>Edit</th>
           <th>Delete</th>
-      
+       
           
         </tr>
       </thead>
       <tbody>
      
         <tr>
-          <td>{note.tittle}</td>
-          <td>{note.noteval}</td>
-          <td>{note.tag}</td>
-          <td>{note.info}</td>
-          <td>{note.somenumber}</td>
+          <td>{note.username}</td>
+          <td>{note.name}</td>
+          <td>{note.inemail}</td>
+          <td>{note.phone}</td>
           <td>
           
             <i
@@ -54,18 +52,22 @@ const Noteitem = (props) => {
               Edit
             </i>
           </td>
+          
           <td>
             <i
               className="fa-solid fa-trash mx-2"
               onClick={() => {
                 deleteNote(note._id);
-                props.showAlert('Deleted Successfully', 'success');
+                alert('DELETED BOSS')
               }}
             >
               Delete
             </i>
           </td>
-      
+          <td>
+          
+</td>
+
         </tr>
         {/* You can add more rows here for each note */}
       </tbody>

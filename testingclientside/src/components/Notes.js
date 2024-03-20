@@ -1,20 +1,20 @@
 
 import React, { useContext, useEffect, useRef,useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import noteContext from '../context/NoteContext';
-import SearchBar from './SearchBar';
+import noteContext from '../context/Notecontext';
+import AddNote from './Addnote';
 import Noteitem from './NoteItem';
-
-
+import SearchBar from './SearchBar';
+import Layout from './Layouts/Layout';
 
 const Notes = (props) => {
   const navigate = useNavigate();
   const context = useContext(noteContext)
   const { notes, getNotes, editNote } = context;
- 
+  const authToken = localStorage.getItem('auth') ? JSON.parse(localStorage.getItem('auth')).token : null;
 
   useEffect(() => {
-    if(localStorage.getItem('token')){
+    if(authToken){
       getNotes();
     }
     else{
@@ -26,21 +26,21 @@ const Notes = (props) => {
   const ref = useRef(null);  
   const refClose = useRef(null);  
 
-  const [note,setNote] = useState({id:"",tittle:"",noteval:"",tag:"",info:"",somenumber:"",});
+  const [note,setNote] = useState({id:"",eusername:"", ename:"",einemail:"",ephone:""});
   const [searchInput, setSearchInput] = useState('');
  
 
 
   const updateNote = (currentNote) => {
     ref.current.click();
-    setNote({id:currentNote._id, tittle: currentNote.tittle, noteval: currentNote.noteval , tag : currentNote.tag, info: currentNote.info,somenumber: currentNote.somenumber});
+    setNote({id:currentNote._id, eusername: currentNote.username, ename: currentNote.name , einemail : currentNote.inemail, ephone: currentNote.phone});
   }
 
   
   const handleClick =(e)=>{
-    editNote(note.id,note.tittle,note.noteval,note.tag,note.info,note.somenumber);
+    editNote(note.id,note.eusername,note.ename,note.einemail,note.ephone);
     refClose.current.click();
-    props.showAlert("Updated Succesfully","success");
+    alert('updated your docs');
 
 }
 
@@ -59,7 +59,8 @@ const filteredNotes = notes.filter((note) =>
 
   return (
     <>
-  
+    <Layout>
+      <AddNote showAlert={props.showAlert} />
       <SearchBar handleSearch={handleSearch} />
       
       <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -75,24 +76,20 @@ const filteredNotes = notes.filter((note) =>
             <div className="modal-body">
               <form>
                 <div className="mb-3">
-                  <label htmlFor="tittle" className="form-label">tittle</label>
-                  <input type="text" className="form-control" id="tittle" name='tittle' aria-describedby="emailHelp" value={note.tittle} onChange={onChange} minLength={5} required  />
+                  <label htmlFor="username" className="form-label">Update Name</label>
+                  <input type="text" className="form-control" id="eusername" name='eusername' aria-describedby="emailHelp" value={note.eusername} onChange={onChange} minLength={5} required  />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="noteval" className="form-label">note</label>
-                  <input type="text" className="form-control" id="noteval" name='noteval' value={note.noteval} onChange={onChange} minLength={5} required />
+                  <label htmlFor="name" className="form-label">Update Phone</label>
+                  <input type="text" className="form-control" id="ename" name='ename' value={note.ename} onChange={onChange} minLength={5} required />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="tag" className="form-label">Tag</label>
-                  <input type="text" className="form-control" id="tag" name='tag' value={note.tag} onChange={onChange} />
+                  <label htmlFor="inemail" className="form-label">Update Email</label>
+                  <input type="text" className="form-control" id="einemail" name='einemail' value={note.einemail} onChange={onChange} />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="info" className="form-label">Tag</label>
-                  <input type="text" className="form-control" id="info" name='info' value={note.info} onChange={onChange} />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="somenumber" className="form-label">Some number/values</label>
-                  <input type="text" className="form-control" id="somenumber" name='somenumber' value={note.somenumber} onChange={onChange} minLength={5} required />
+                  <label htmlFor="phone" className="form-label">Update Phone</label>
+                  <input type="text" className="form-control" id="ephone" name='ephone' value={note.ephone} onChange={onChange} minLength={5} required />
                 </div>
               </form>
             </div>
@@ -111,14 +108,14 @@ const filteredNotes = notes.filter((note) =>
         {notes.length===0 && 'No Notes to display'}
         </div>
         {filteredNotes.sort((a,b) => new Date(b.date) - new Date(a.date)).map((note,_id) => {
-  return <Noteitem key={_id} updateNote={updateNote}  showAlert={props.showAlert} note={note} />
+  return <Noteitem key={_id} updateNote={updateNote}   note={note} />
 })}
 
       </div>
 
        
       
-   
+      </Layout>
     </>
   )
 }

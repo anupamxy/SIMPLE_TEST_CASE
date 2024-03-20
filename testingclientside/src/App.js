@@ -29,8 +29,13 @@ import Team from './pages/TeamAdmin/Team';
 import LoginButton from './pages/Googlelogin';
 import Teams from './teams/Teams';
 
+import NoteState from './context/Notestate';
+
+
+
 function App() {
   return (
+    <NoteState>
     <Routes>
       <Route path="/" element={<Welcomepage />} />
       <Route path="/courses" element={<HomePage />} />
@@ -63,7 +68,10 @@ function App() {
       <Route path="/googlelogin" element={<LoginButton />} />
       <Route path="/teams" element={<Teams />} />
       <Route path="/*" element={<Pagenotfound />} />
+   
+      
     </Routes>
+    </NoteState>
   );
 }
 

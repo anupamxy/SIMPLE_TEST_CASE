@@ -6,6 +6,7 @@ import authRoutes from './routes/authRoutes.js';
 import categoryRoutes from './routes/categoryRoute.js';
 import productRoutes from './routes/productRoutes.js';
 import fileUpload from 'express-fileupload';
+import Notes from './routes/note.js';
 import cors from "cors";
 import path from 'path';
 
@@ -25,8 +26,7 @@ app.use(morgan('dev'));
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/category', categoryRoutes);
 app.use('/api/v1/product', productRoutes);
-
-
+app.use('/api/notes', Notes);
 const PORT = process.env.PORT || 8080;
 app.get('/', (req,res) =>{
     res.send("hello world lets you we dev together");

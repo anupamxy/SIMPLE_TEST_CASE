@@ -3,25 +3,26 @@ const {Schema} = mongoose;
  
 //schema
 const NotesSchema = new Schema({
-    tittle:{
+   
+    user:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
 
-    noteval:{
+    username:{
         type: String,
         required: true
     },
-    tag:{
+    name:{
         type: String,
         required: true
     },
-    info:{
+    inemail:{
         type :  String,
         required: true,
     },
     
-    somenumber:{
+    phone:{
         type: Number,
         required: true,
     },
@@ -29,7 +30,10 @@ const NotesSchema = new Schema({
         type: Date,
         default : Date.now
     }
-});
+},
+{
+timestamps:true,
+}
+);
 
-
-export default mongoose.model("plantoday", NotesSchema);
+export default mongoose.model('notes',NotesSchema);

@@ -1,7 +1,16 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
+import AddNote from './../components/Addnote';
+import Notes from './../components/Notes';
 
-const Teams = (props) => {
-  const { orders } = props;
+
+
+
+
+
+const Teams = () => {
+  const location = useLocation();
+  const orders = location.state && location.state.orders;
 
   const ordersArray = orders && Array.isArray(orders) ? orders : [];
 
@@ -21,6 +30,8 @@ const Teams = (props) => {
       ) : (
         <p>No orders data available</p>
       )}
+     <Notes/>
+    
     </div>
   );
 };

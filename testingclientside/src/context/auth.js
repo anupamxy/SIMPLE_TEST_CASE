@@ -9,6 +9,7 @@ const AuthProvider=({children})=>{
 })
 axios.defaults.headers.common['Authorization']=auth?.token
 useEffect(()=>{
+
     const data=localStorage.getItem('auth')
     if(data){
         const parseData=JSON.parse(data)

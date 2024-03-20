@@ -54,12 +54,13 @@ const Orders = () => {
                         <td>{o?.payment.success ? "Success" : "Failed"}</td>
                         <td>{o?.products?.length}</td>
                         <td>
+                         
                           {o?.status === "verified" ? (
                             <NavLink
                               to={{ pathname: '/teams', state: { orders: o ? [o] : null } }}
                               className="list-group-item list-group-item-action"
                             >
-                              Move to Team
+                              {o?.products?.name}
                             </NavLink>
                           ) : (
                             <span>You are Not verified by Admin</span>
