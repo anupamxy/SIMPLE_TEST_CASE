@@ -19,6 +19,7 @@ const AdminOrders = () => {
   ]);
   const [changeStatus, setChangeStatus] = useState("");
   const [orders, setOrders] = useState([]);
+  const [filteredOrders, setFilteredOrders] = useState([]);
   const [auth, setAuth] = useAuth();
 
   const getOrders = async () => {
@@ -26,9 +27,10 @@ const AdminOrders = () => {
       const { data } = await axios.get("/api/v1/auth/all-orders");
       console.log("API Response Data:", data);
       setOrders(data);
+      setFilteredOrders(data); // Set filtered orders initially to all orders
     } catch (error) {
       console.log(error);
- alert("not found");
+      alert("not found");
     }
   };
 
@@ -48,6 +50,16 @@ const AdminOrders = () => {
     }
   };
 
+  // Function to filter orders based on status
+  const handleFilter = (value) => {
+    if (value === "all") {
+      setFilteredOrders(orders); // If "All" is selected, set filteredOrders to all orders
+    } else {
+      const filtered = orders.filter((order) => order.status === value);
+      setFilteredOrders(filtered); // Set filteredOrders to orders with selected status
+    }
+  };
+
   return (
     <Layout title={"All Orders Data"}>
       <div className="row dashboard">
@@ -57,10 +69,24 @@ const AdminOrders = () => {
         <div className="col-md-9">
           <h1 className="text-center">List of Users for Verification</h1>
           
-          {orders?.length === 0 ? (
+          {/* Filter dropdown */}
+          <div className="text-right mb-3">
+            <Select 
+            className="filter-dropdown"
+            defaultValue="all" onChange={handleFilter}>
+              <Option value="all">All</Option>
+              {status.map((s, i) => (
+                <Option key={i} value={s}>
+                  {s}
+                </Option>
+              ))}
+            </Select>
+          </div>
+          
+          {filteredOrders?.length === 0 ? (
             <h1>Loading...</h1>
           ) : (
-            orders?.map((o, i) => (
+            filteredOrders?.map((o, i) => (
               <div className="border shadow" key={i}>
                 <table className="table">
                   <thead>
@@ -127,3 +153,4 @@ const AdminOrders = () => {
 };
 
 export default AdminOrders;
+

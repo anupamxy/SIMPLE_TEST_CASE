@@ -19,6 +19,8 @@ export const createProductController = async (req, res) => {
     const { name, slug, description, price, category, adminname, shipping } = req.body;
     const { photo } = req.files;
 
+     console.log(photo);
+
     // Validation
     if (!name || !description || !price || !category||!adminname ||!shipping) {
       return res.status(400).send({ error: "All fields are required" });
@@ -158,6 +160,7 @@ export const updateProductController = async (req, res) => {
   try {
     const { name, slug, description, price, category, adminname, shipping } =
       req.body;
+      console.log(req);
     const { photo } = req.files; // Retrieve the photo from req.files
 
     // Validation

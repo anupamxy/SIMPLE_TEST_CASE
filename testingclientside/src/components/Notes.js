@@ -103,7 +103,7 @@ const filteredNotes = notes.filter((note) =>
 
 
       <div className="row my-3">
-        <h2 className='px-5 addnote'>Your Influencer</h2>
+        <h2 className='px-5 addnote'>Created Test case</h2>
         <div className="container mx-2 px-5">
         {notes.length===0 && 'No Notes to display'}
         </div>

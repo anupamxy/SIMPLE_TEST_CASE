@@ -28,6 +28,9 @@ const Noteitem = (props) => {
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
+          <th>domain</th>
+          <th>created test case</th>
+          <th>Mark for review</th>
           <th>Edit</th>
           <th>Delete</th>
        
@@ -41,6 +44,9 @@ const Noteitem = (props) => {
           <td>{note.name}</td>
           <td>{note.inemail}</td>
           <td>{note.phone}</td>
+          <td>hiiiiiiiiiiii</td>
+          <td>nnnnnnnnnnnn</td>
+          <td>mmmmmmmmmmmmmmmmmmmm</td>
           <td>
           
             <i

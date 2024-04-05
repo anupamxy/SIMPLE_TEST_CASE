@@ -9,6 +9,8 @@ import fileUpload from 'express-fileupload';
 import Notes from './routes/note.js';
 import cors from "cors";
 import path from 'path';
+import { getDocument,updateDocument } from "./controller/docscontroller.js";
+import { Server } from 'socket.io';
 
 
 // Configure env
@@ -31,6 +33,28 @@ const PORT = process.env.PORT || 8080;
 app.get('/', (req,res) =>{
     res.send("hello world lets you we dev together");
 })
-app.listen(PORT, () => {
+const server=app.listen(PORT, () => {
     console.log(`SERVER RUNNING on ${process.env.DEV_MODE} mode on port ${PORT}`);
+});
+const io = new Server(server, {
+    cors: {
+        origin: '*', // Allow requests from any origin, you might want to restrict this to your frontend domain in production
+        methods: ['GET', 'POST']
+    }
+});
+
+io.on('connection', socket => {
+    socket.on('get-document', async documentId => {
+        const document = await getDocument(documentId);
+        socket.join(documentId);
+        socket.emit('load-document', document.data);
+
+        socket.on('send-changes', delta => {
+            socket.broadcast.to(documentId).emit('receive-changes', delta);
+        });
+
+        socket.on('save-document', async data => {
+            await updateDocument(documentId, data);
+        });
+    });
 });

@@ -25,7 +25,7 @@ function AddNote(props) {
   return (
     <div className='page'>
     <div className="container my-3">
-      <h1>Add an influencer</h1>
+      <h1>Create Your Test cases</h1>
       <form>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">

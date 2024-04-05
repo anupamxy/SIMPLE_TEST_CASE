@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,Navigate } from "react-router-dom";
 import Policy from "./pages/Policy";
 import Pagenotfound from "./pages/Pagenotfound";
 import Contact from './pages/Contact';
@@ -30,6 +30,12 @@ import LoginButton from './pages/Googlelogin';
 import Teams from './teams/Teams';
 
 import NoteState from './context/Notestate';
+import { v4 as uuid } from 'uuid';
+
+
+import Editor from './components/Editor';
+import AddNote from "./components/Addnote";
+import Notes from './components/Notes';
 
 
 
@@ -68,6 +74,10 @@ function App() {
       <Route path="/googlelogin" element={<LoginButton />} />
       <Route path="/teams" element={<Teams />} />
       <Route path="/*" element={<Pagenotfound />} />
+      <Route path='/brewstestdocs' element={<Navigate replace to={`/docs/${uuid()}`} /> } />
+        <Route path='/docs/:id' element={<Editor/>} />
+        <Route path="/addnote"element={<AddNote/>}/>
+        <Route path="/notes" element={<Notes/>}/>
    
       
     </Routes>

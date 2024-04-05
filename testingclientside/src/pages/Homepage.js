@@ -112,11 +112,20 @@ const HomePage = () => {
       
       
       <div className="container-fluid row mt-0 home-page">
+      <div className="testheading">
+ BREWTEST
+  <div>BREWTEST</div>
+  <div>BREWTEST</div>
+  <div>BREWTEST</div>
+  <div>BREWTEST</div>
+</div>
         <div className="col-md-2 filters">
           <h4 className="text-center">SELECT TEAM </h4>
           <div className="d-flex flex-column">
+        
             {categories?.map((c) => (
               <Checkbox
+              className="checkbox"
                 key={c._id}
                 onChange={(e) => handleFilter(e.target.checked, c._id)}
               >
@@ -124,6 +133,7 @@ const HomePage = () => {
               </Checkbox>
             ))}
           </div>
+        
           {/* price filter */}
         
           <div className="d-flex flex-column">
@@ -135,9 +145,11 @@ const HomePage = () => {
             </button>
           </div>
         </div>
+      
+        
   
         <div className="col ">
-          <h1 className="onboarding">WELCOME TO OUR ONBOARDING TEAM </h1>
+        
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
               <div className="card-for-all-team-ml-2" key={p._id}>
