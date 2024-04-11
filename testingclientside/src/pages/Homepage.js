@@ -4,7 +4,7 @@ import { Checkbox, Radio } from "antd";
 import { Prices } from "../components/Prices";
 import axios from "axios";
 import Layout from "./../components/Layouts/Layout";
-import { useCart } from "../context/cart";
+import { useCart } from "../components/context/cart";
 import toast from "react-hot-toast";
 import { AiOutlineReload } from "react-icons/ai";
 

@@ -24,9 +24,10 @@ router.post('/addnote', [
     body('name', 'Enter a valid name').isLength({ min: 2 }),
     body('inemail', 'Enter a valid email').isLength({ min: 2 }),
     body('phone', 'Enter valid phone number').isLength({ min: 2 }),
+    body('review','Enter a valid status').isLength({min:2}),
 ], async (req, res) => {
     try {
-        const { username, name, inemail, phone } = req.body;
+        const { username, name, inemail, phone,review } = req.body;
         console.log(req.body);
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -38,6 +39,7 @@ router.post('/addnote', [
             name,
             inemail,
             phone,
+            review,
             user:req.username
            
         });
@@ -52,20 +54,21 @@ router.post('/addnote', [
 
 // Routes to update an existing note: PUT "/api/notes/updatenote/:id" (login required)
 router.put('/updatenote/:id', async (req, res) => {
-    const { username, name, inemail, phone } = req.body;
+    const { username, name, inemail, phone,review } = req.body;
     try {
         const newNote = {};
         if (username) newNote.username = username;
         if (name) newNote.name = name;
         if (inemail) newNote.inemail = inemail;
         if (phone) newNote.phone = phone;
+        if (review) newNote.review=review;
 
         let note = await Note.findById(req.params.id);
         if (!note) return res.status(404).send('Not Found');
 
-        if (note.user.toString() !== req.user.id) {
-            return res.status(401).send('Not allowed');
-        }
+        // if (note.user.toString() !== req.user.id) {
+        //     return res.status(401).send('Not allowed');
+        // }
 
         note = await Note.findByIdAndUpdate(req.params.id, { $set: newNote }, { new: true });
         res.json({ note });

@@ -3,7 +3,7 @@ import axios from "axios";
 import moment from "moment";
 import Layout from "./../components/Layouts/Layout";
 import UserMenu from "./../components/Layouts/UserMenu";
-import { useAuth } from "../context/auth";
+import { useAuth } from "../components/context/auth";
 import '../styles/Welcomstyle.css';
 import Orders from './user/Orders';
 

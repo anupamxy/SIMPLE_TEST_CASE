@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import { useAuth } from "../../context/auth";
+import { useAuth } from "../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
 import useCategory from "../../hooks/useCategory";
 import { Badge } from "antd";
-import { useCart } from "../../context/cart";
+import { useCart } from "../context/cart";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {

@@ -29,18 +29,23 @@ import Team from './pages/TeamAdmin/Team';
 import LoginButton from './pages/Googlelogin';
 import Teams from './teams/Teams';
 
-import NoteState from './context/Notestate';
+import NoteState from './components/context/Notestate';
 import { v4 as uuid } from 'uuid';
 
 
 import Editor from './components/Editor';
 import AddNote from "./components/Addnote";
 import Notes from './components/Notes';
+import RoomPage from './components/screens/Room';
+import LobbyScreen from './components/screens/Lobby';
+import { SocketProvider } from "./components/context/Socketprovider";
+
 
 
 
 function App() {
   return (
+    <SocketProvider>
     <NoteState>
     <Routes>
       <Route path="/" element={<Welcomepage />} />
@@ -78,10 +83,11 @@ function App() {
         <Route path='/docs/:id' element={<Editor/>} />
         <Route path="/addnote"element={<AddNote/>}/>
         <Route path="/notes" element={<Notes/>}/>
-   
-      
+        <Route path="/hudle" element={<LobbyScreen/>} />
+        <Route path="/room/:roomId" element={<RoomPage />} />   
     </Routes>
     </NoteState>
+    </SocketProvider>
   );
 }
 

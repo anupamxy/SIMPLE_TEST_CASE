@@ -650,11 +650,7 @@ box-shadow: 0px 0px 60px 20px rgba(171,43,158,0.9);
   font-family:'Playfair Display', serif;
 }
 body{
- color: white;
- background-image: url(https://img.freepik.com/free-vector/abstract-blue-circle-black-background-technology_1142-12714.jpg?t=st=1711003856~exp=1711007456~hmac=0ec749e52f470fa9b30616a99ae6d169d50b3bbdebb9173acd5753298aa63fc7&w=1060);
- background-attachment: fixed;
- background-repeat: no-repeat;
- background-size: cover;
+  background-color: #050505;
 }
 
 .main{

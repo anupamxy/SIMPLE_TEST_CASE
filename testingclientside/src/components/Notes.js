@@ -1,7 +1,8 @@
 
+
 import React, { useContext, useEffect, useRef,useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import noteContext from '../context/Notecontext';
+import noteContext from './context/Notecontext';
 import AddNote from './Addnote';
 import Noteitem from './NoteItem';
 import SearchBar from './SearchBar';
@@ -26,19 +27,19 @@ const Notes = (props) => {
   const ref = useRef(null);  
   const refClose = useRef(null);  
 
-  const [note,setNote] = useState({id:"",eusername:"", ename:"",einemail:"",ephone:""});
+  const [note,setNote] = useState({id:"",eusername:"", ename:"",einemail:"",ephone:"",ereview:""});
   const [searchInput, setSearchInput] = useState('');
  
 
 
   const updateNote = (currentNote) => {
     ref.current.click();
-    setNote({id:currentNote._id, eusername: currentNote.username, ename: currentNote.name , einemail : currentNote.inemail, ephone: currentNote.phone});
+    setNote({id:currentNote._id, eusername: currentNote.username, ename: currentNote.name , einemail : currentNote.inemail, ephone: currentNote.phone,ereview:currentNote.review,});
   }
 
   
   const handleClick =(e)=>{
-    editNote(note.id,note.eusername,note.ename,note.einemail,note.ephone);
+    editNote(note.id,note.eusername,note.ename,note.einemail,note.ephone,note.ereview);
     refClose.current.click();
     alert('updated your docs');
 
@@ -46,6 +47,7 @@ const Notes = (props) => {
 
 const onChange = (e)=>{
     setNote({...note,[e.target.name]:e.target.value})
+    console.log('updated')
 }
 const handleSearch = (searchTerm) => {
   setSearchInput(searchTerm);
@@ -90,6 +92,10 @@ const filteredNotes = notes.filter((note) =>
                 <div className="mb-3">
                   <label htmlFor="phone" className="form-label">Update Phone</label>
                   <input type="text" className="form-control" id="ephone" name='ephone' value={note.ephone} onChange={onChange} minLength={5} required />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="review" className="form-label">Update review</label>
+                  <input type="text" className="form-control" id="ereview" name='ereview' value={note.ereview} onChange={onChange} minLength={5} required />
                 </div>
               </form>
             </div>

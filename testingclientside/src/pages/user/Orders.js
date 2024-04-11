@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "./../../components/Layouts/Layout";
 import axios from "axios";
-import { useAuth } from "../../context/auth";
+import { useAuth } from "../../components/context/auth";
 import moment from "moment";
 import { NavLink } from "react-router-dom";
 

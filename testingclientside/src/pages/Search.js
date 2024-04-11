@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "./../components/Layouts/Layout";
-import { useSearch } from "../context/search";
+import { useSearch } from "../components/context/search";
 const Search = () => {
   const [values, setValues] = useSearch();
   return (

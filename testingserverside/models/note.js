@@ -1,39 +1,47 @@
 import mongoose from "mongoose";
-const {Schema} = mongoose;
- 
-//schema
+const { Schema } = mongoose;
+
+// Schema
 const NotesSchema = new Schema({
-   
-    user:{
+    // User ID
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-
-    username:{
+    // Username
+    username: {
         type: String,
         required: true
     },
-    name:{
+    // Name of the note
+    name: {
         type: String,
         required: true
     },
-    inemail:{
-        type :  String,
+    // Email associated with the note
+    inemail: {
+        type: String,
         required: true,
     },
-    
-    phone:{
+    // Phone number associated with the note
+    phone: {
         type: Number,
         required: true,
     },
-    date:{
-        type: Date,
-        default : Date.now
-    }
-},
-{
-timestamps:true,
-}
-);
+    review:{
+        type:String,
+        required:true,
 
-export default mongoose.model('notes',NotesSchema);
+    },
+    // Date of creation or modification
+    date: {
+        type: Date,
+        default: Date.now
+    }
+}, {
+    // Automatically add createdAt and updatedAt fields
+    timestamps: true,
+});
+
+// Export the model
+export default mongoose.model('notes', NotesSchema);

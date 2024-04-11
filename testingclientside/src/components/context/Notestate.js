@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import noteContext from "./Notecontext";
 
@@ -30,7 +31,7 @@ const NoteState = (props) => {
     };
 
     // Add a Note
-    const addNote = async (username, name, inemail, phone) => {
+    const addNote = async (username, name, inemail, phone,review) => {
         console.log(authToken);
         // API call
         const response = await fetch(`${host}/api/notes/addnote`, {
@@ -40,7 +41,7 @@ const NoteState = (props) => {
                 "Content-Type": 'application/json',
                 "auth-token": authToken
             },
-            body: JSON.stringify({ username, name, inemail, phone }), 
+            body: JSON.stringify({ username, name, inemail, phone,review }), 
         });
 
         const note = await response.json();
@@ -63,7 +64,7 @@ const NoteState = (props) => {
     };
 
     // Edit a Note
-    const editNote = async (id, username, name, inemail, phone) => {
+    const editNote = async (id, username, name, inemail, phone,review) => {
         // API call
         await fetch(`${host}/api/notes/updatenote/${id}`, {
             method: 'PUT',
@@ -71,11 +72,11 @@ const NoteState = (props) => {
                 'Content-Type': 'application/json',
                 'auth-token': authToken
             },
-            body: JSON.stringify({ username, name, inemail, phone })
+            body: JSON.stringify({ username, name, inemail, phone,review })
         });
         const newNotes = notes.map(note => {
             if (note._id === id) {
-                return { ...note, username, name, inemail, phone };
+                return { ...note, username, name, inemail, phone,review };
             }
             return note;
         });

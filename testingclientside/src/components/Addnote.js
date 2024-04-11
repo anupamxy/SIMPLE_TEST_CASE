@@ -1,5 +1,6 @@
+
 import React, { useContext, useState } from 'react';
-import noteContext from '../context/Notecontext';
+import noteContext from './context/Notecontext';
 import Notes from './Notes';
 
 
@@ -8,12 +9,12 @@ function AddNote(props) {
   const context = useContext(noteContext);
   const { addNote } = context;
 
-  const [note, setNote] = useState({ username: '', name: '', inemail: '', phone: '' });
+  const [note, setNote] = useState({ username: '', name: '', inemail: '', phone: '',review:' ' });
   
   const handleClick = (e) => {
     e.preventDefault();
-    addNote(note.username, note.name, note.inemail, note.phone);
-    setNote({ username: '', name: '', inemail: '', phone: '' });
+    addNote(note.username, note.name, note.inemail, note.phone,note.review);
+    setNote({ username: '', name: '', inemail: '', phone: '',review:'' });
    
     
   };
@@ -29,7 +30,7 @@ function AddNote(props) {
       <form>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
-            Username
+            Testcaseid
           </label>
           <input
             type="text"
@@ -46,7 +47,7 @@ function AddNote(props) {
 
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
-            Name
+            TestCase
           </label>
           <input
             type="text"
@@ -61,7 +62,7 @@ function AddNote(props) {
         </div>
         <div className="mb-3">
           <label htmlFor="inemail" className="form-label">
-            Email
+            CreatedBy
           </label>
           <input
             type="text"
@@ -75,7 +76,7 @@ function AddNote(props) {
         </div>
         <div className="mb-3">
           <label htmlFor="phone" className="form-label">
-            Phone
+            Testcasecountnumber
           </label>
           <input
             type="number"
@@ -87,11 +88,25 @@ function AddNote(props) {
             onChange={onChange}
           />
         </div>
+        <div className="mb-3">
+          <label htmlFor="phone" className="form-label">
+            TestReviewreport
+          </label>
+          <input
+            type="string"
+            className="form-control"
+            id="review"
+            name="review"
+            value={note.review}
+            minLength={2}
+            onChange={onChange}
+          />
+        </div>
 
         <button type="submit" className="btn btn-primary" onClick={handleClick}>
         
 
-          Add Influencer
+          Add Test Case
         </button>
       </form>
       

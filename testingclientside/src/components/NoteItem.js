@@ -1,6 +1,5 @@
-
 import React, { useContext,useState} from 'react';
-import noteContext from '../context/Notecontext';
+import noteContext from './context/Notecontext';
 import "./Noteitem.css"
 
 
@@ -24,13 +23,13 @@ const Noteitem = (props) => {
        
       <thead>
         <tr>
-          <th>Username</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>domain</th>
+          <th>TestcaseId</th>
+          <th>TestName</th>
+          <th>CreatedBy</th>
+          <th>TestcaseCountNumber </th>
+          <th>Created on Date</th>
+          <th>Reviewstatus</th>
           <th>created test case</th>
-          <th>Mark for review</th>
           <th>Edit</th>
           <th>Delete</th>
        
@@ -44,9 +43,10 @@ const Noteitem = (props) => {
           <td>{note.name}</td>
           <td>{note.inemail}</td>
           <td>{note.phone}</td>
-          <td>hiiiiiiiiiiii</td>
+          <td>{note.date}</td>
+          <td>{note.review}</td>
           <td>nnnnnnnnnnnn</td>
-          <td>mmmmmmmmmmmmmmmmmmmm</td>
+          
           <td>
           
             <i
@@ -82,4 +82,4 @@ const Noteitem = (props) => {
   );
 };
 
-export default Noteitem;
+export default Noteitem; 
