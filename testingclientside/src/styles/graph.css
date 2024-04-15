@@ -1,0 +1,25 @@
+.chart{
+    margin-top: 0px;
+    background-image: url(https://img.freepik.com/free-photo/flat-lay-statistics-presentation-with-chart_23-2149023811.jpg?w=1060&t=st=1700394115~exp=1700394715~hmac=f031e806684a768fd2e04213e2b9ef551d5eec4f9034df97e8c06300d12b13b9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.charthead{
+    text-align: center;
+
+}
+.datasets{
+    background-color: aqua;
+
+}
+.pie{
+    margin-top: 90px;
+}
+#chartContainer{
+    margin-top: 0px;
+}
+.value{
+    font-size: 2rem;
+    color: aqua;
+}

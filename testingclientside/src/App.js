@@ -39,6 +39,8 @@ import Notes from './components/Notes';
 import RoomPage from './components/screens/Room';
 import LobbyScreen from './components/screens/Lobby';
 import { SocketProvider } from "./components/context/Socketprovider";
+import Linechart from './Graph/Linechart';
+import Piechart from './Graph/Piechart';
 
 
 
@@ -84,7 +86,10 @@ function App() {
         <Route path="/addnote"element={<AddNote/>}/>
         <Route path="/notes" element={<Notes/>}/>
         <Route path="/hudle" element={<LobbyScreen/>} />
-        <Route path="/room/:roomId" element={<RoomPage />} />   
+        <Route path="/room/:roomId" element={<RoomPage />} />
+        <Route path="linechart" element={<Linechart/>}/>
+        <Route path="piechart" element={<Piechart/>}/>
+
     </Routes>
     </NoteState>
     </SocketProvider>
