@@ -169,3 +169,7 @@ https://drive.google.com/file/d/16RIQzTzmOzPhPXKJd_GssMTsPpxnTW72/view
 ---
 
 By implementing these structured requirements and UI design recommendations, BrewTest will offer a robust, user-friendly platform for managing test cases and user roles efficiently.
+  ### ** Special Thanks to zepto for this project Idea
+  
+
+![images (1)](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/0cfbb2af-0bfe-496c-9cd6-6ce351b004a1)
