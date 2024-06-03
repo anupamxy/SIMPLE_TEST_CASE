@@ -22,6 +22,7 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
   - We have graphs and a large number of charts to analyze their test cases
   - They can chat with their team members in real-time to discuss their test cases
   - We provide a real-time BrewsDocs page where users can create their test cases with other team members using a real-time test editor
+  - ![userprofilePNG](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/abbfd8cb-d2da-49c2-bf20-f0bd6942c286)
 
 ## **2. Teams** :people_holding_hands:
 
@@ -43,10 +44,15 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
 - Signup request notifications are sent to all Admins of the selected team(s)
 - Any Admin (if the request is for their team) or Super Admin can approve/reject the request
   - Once one approves, others' actions are ignored
+  - 
+    ![glogin](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/ff6501fc-7afe-4804-bf36-c3ed18c472c2)
+
 
 #### **Normal Signup**
 - Users provide their first name, last name, email address, team(s) (multiple selection possible), and role
 - The same approval flow as Google SSO signup applies
+- ![login](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/4adf3f84-12b9-41f2-b653-e797e85ea2b0)
+
 
 #### **Unapproved Users**
 - Unapproved users see a read-only view of the portal after login
@@ -90,14 +96,18 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
 
 ### **General Design Principles**
 - **ChatBot:** Fully operated chatbot which explains the complete website
+- ![botPNG](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/097be13f-d71d-48d2-88ab-7916dabbcc71)
+
 - **User-Centric:** The UI should be intuitive and user-friendly, ensuring a seamless experience for all roles
 - **Responsive Design:** The interface should be accessible and usable on various devices, including desktops, tablets, and smartphones
 - **Consistent Layout:** Use a consistent layout and color scheme throughout the application to enhance usability and visual appeal
+![ui](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/20b78d75-4122-4d63-a792-be81dc2df7a6)
 
 ### **Home Page** :house:
 
 - **Dashboard View:** Tailored to the user's assigned team(s), displaying relevant metrics and quick actions
 - **Navigation Bar:** Accessible navigation bar with links to Home, Tasks, Teams, and Settings
+- 
 
 ### **Signup and Login** :memo:
 
