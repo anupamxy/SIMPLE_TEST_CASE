@@ -2,6 +2,10 @@
 
 ## **Overview**
 BrewTest is a comprehensive web application designed to facilitate efficient test case management across various teams. The system incorporates robust user roles and permissions, a seamless signup flow with Google SSO, and intuitive dashboards for administrators. The following document outlines the structured requirements and user interface design for BrewTest.
+Video Guide :movie_camera:
+For a comprehensive video guide on how to use BrewTest, please refer to the following link:
+
+https://drive.google.com/file/d/16RIQzTzmOzPhPXKJd_GssMTsPpxnTW72/view
 
 ## **1. User Roles and Permissions** :key:
 
