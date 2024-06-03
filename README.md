@@ -23,6 +23,14 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
   - They can chat with their team members in real-time to discuss their test cases
   - We provide a real-time BrewsDocs page where users can create their test cases with other team members using a real-time test editor
   - ![userprofilePNG](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/abbfd8cb-d2da-49c2-bf20-f0bd6942c286)
+  - ![linechart](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/cb76a7ab-de30-4566-b1ca-b07b849aab23)
+  - ![piechartPNG](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/7722a718-4f6f-4279-82c1-17586c2fb43a)
+  - ![brewsdocs](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/371a0a1c-a8cf-49d3-9e92-702460d12ea6)
+  - ![chatapp](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/c66f6127-45b2-4973-a292-5f9ce5f831a8)
+
+
+
+
 
 ## **2. Teams** :people_holding_hands:
 
@@ -107,7 +115,8 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
 
 - **Dashboard View:** Tailored to the user's assigned team(s), displaying relevant metrics and quick actions
 - **Navigation Bar:** Accessible navigation bar with links to Home, Tasks, Teams, and Settings
-- 
+-![homepage](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/80b92f40-5178-464c-a0ec-30a048216bf6)
+
 
 ### **Signup and Login** :memo:
 
