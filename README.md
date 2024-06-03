@@ -1,4 +1,4 @@
-                                    BrewTest: WebApp Tool for Test Case Management System
+# **BrewTest: WebApp Tool for Test Case Management System** :coffee:
 
 ## **Overview**
 BrewTest is a comprehensive web application designed to facilitate efficient test case management across various teams. The system incorporates robust user roles and permissions, a seamless signup flow with Google SSO, and intuitive dashboards for administrators. The following document outlines the structured requirements and user interface design for BrewTest.
@@ -10,8 +10,7 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
   - Can create categories of teams
   - Within these categories, they can create teams
   - If Admin allows, only then can users access this website
-  - Approves/rejects user signups![images (1)](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/bd1b11cf-5d38-4ee7-990c-b13ad1468ce0)
-
+  - Approves/rejects user signups
   - Both paid and free teams can be created by Admin
   - For premium teams, we have a fully-functioning payment gateway; upon payment satisfaction, they can access the website
   - Deletes users who are no longer part of the team
@@ -114,6 +113,33 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
 - **Sidebar Navigation:** A sidebar for quick access to user management, team management, and other administrative functions
 - **User Management Panel:** Easy-to-use panel for approving/rejecting users, changing roles, and deleting users
 - **Team Management Panel:** Interface for adding new teams and managing existing ones
+
+---
+
+## **Setup Instructions** :wrench:
+
+### **Frontend Setup** :computer:
+1. Install Node.js modules:
+   ```bash
+   npm i
+   ```
+2. Navigate to the client-side directory:
+   ```bash
+   cd testingclientside
+   ```
+3. You can now access all the features of the frontend.
+
+### **Backend Setup** :server:
+1. Install Node.js modules:
+   ```bash
+   npm i
+   ```
+2. Navigate to the server-side directory:
+   ```bash
+   cd testingserverside
+   ```
+3. The backend is secured with a `.env` file for passwords, integrated with the payment gateway and MongoDB information which you need to create on your own system.
+4. For the payment gateway, you can use Razorpay or other payment developer tools.
 
 ---
 
