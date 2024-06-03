@@ -14,6 +14,8 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
   - Both paid and free teams can be created by Admin
   - For premium teams, we have a fully-functioning payment gateway; upon payment satisfaction, they can access the website
   - Deletes users who are no longer part of the team
+    ![adminpage](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/b384e5f6-931d-4842-befa-e819e9109869)
+
 
 - **QA Tester** :test_tube:
   - Adds, updates, and deletes test cases for their assigned teams
