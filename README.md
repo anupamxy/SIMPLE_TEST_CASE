@@ -10,7 +10,8 @@ BrewTest is a comprehensive web application designed to facilitate efficient tes
   - Can create categories of teams
   - Within these categories, they can create teams
   - If Admin allows, only then can users access this website
-  - Approves/rejects user signups
+  - Approves/rejects user signups![images (1)](https://github.com/anupamxy/SIMPLE_TEST_CASE/assets/123785384/bd1b11cf-5d38-4ee7-990c-b13ad1468ce0)
+
   - Both paid and free teams can be created by Admin
   - For premium teams, we have a fully-functioning payment gateway; upon payment satisfaction, they can access the website
   - Deletes users who are no longer part of the team
