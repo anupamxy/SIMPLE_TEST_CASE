@@ -1,4 +1,4 @@
-                                     # **BrewTest: WebApp Tool for Test Case Management System** :coffee:
+                                    BrewTest: WebApp Tool for Test Case Management System
 
 ## **Overview**
 BrewTest is a comprehensive web application designed to facilitate efficient test case management across various teams. The system incorporates robust user roles and permissions, a seamless signup flow with Google SSO, and intuitive dashboards for administrators. The following document outlines the structured requirements and user interface design for BrewTest.
